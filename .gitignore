@@ -1,3 +1,9 @@
 .ipynb_checkpoints
 .idea
 pyspark.iml
+/metastore_db/
+/bdt-3.0.0+snapshot-py3.10.egg
+/bdt-3.0.0-3.2.0-2.12-SNAPSHOT.jar
+/derby.log
+/poc.lic
+/spark-warehouse/
