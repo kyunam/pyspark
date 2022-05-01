@@ -4,6 +4,8 @@
 export SPARK_HOME='/usr/local/spark-3.2.1-bin-hadoop3.2'
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS='lab --ip=0.0.0.0 --port 8888 --allow-root --no-browser --NotebookApp.token=""'
+export JARS="${HOME}/WS/bdt3-main/target/bdt-3.0.0-3.2.0-2.12-SNAPSHOT.jar"
+export PYFILES="${HOME}/WS/bdt3/bdt3-py/dist/bdt-3.0.0+snapshot-py3.10.egg"
 
 ${SPARK_HOME}/bin/pyspark\
   --master local[*]\
@@ -16,5 +18,5 @@ ${SPARK_HOME}/bin/pyspark\
   --conf spark.memory.offHeap.enabled=true\
   --conf spark.kryo.unsafe=true\
   --conf spark.serializer=org.apache.spark.serializer.KryoSerializer\
-  --conf spark.submit.pyFiles='bdt-3.0.0+snapshot-py3.10.egg'\
-  --conf spark.jars='bdt-3.0.0-3.2.0-2.12-SNAPSHOT.jar'
+  --conf spark.submit.pyFiles="${PYFILES}"\
+  --conf spark.jars="${JARS}"
